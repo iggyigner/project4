@@ -1,0 +1,9 @@
+<h1>Login</h1>
+
+<%= form_for @user, {url: "/auths"} do |u| %>
+
+	<%= u.text_field :email, :placeholder => "Enter Email" %>
+	<%= u.password_field :password, :placeholder => "Enter Password" %>
+	<%= u.submit "Log In" %>
+
+<% end %>
