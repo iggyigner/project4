@@ -4,6 +4,13 @@ GIT
   specs:
     bcrypt (3.1.7)
 
+GIT
+  remote: https://github.com/oliverfriedmann/rails-bookmarklet.git
+  revision: 99bb67ddbaf84779a10156196bfaccfe4de67029
+  specs:
+    rails-bookmarklet (0.0.1)
+      rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,6 +145,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 4.0.3)
+  rails-bookmarklet!
   rails_12factor
   sass-rails (~> 4.0.0)
   sdoc
