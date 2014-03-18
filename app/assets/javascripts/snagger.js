@@ -10,23 +10,38 @@ var images = document.getElementsByTagName('img', 'div');
     setupSnagger(images);
   // location.href = "http://localhost:3000/?x=5"
 }
+
+    // var website = document.getElementsByTagName('body');
+    // var wrapper = document.createElement('div');
+    // website.append('')
+
+
 var setupSnagger = function(images){
   if ( !document.getElementById('imageSnagger') ) {
     var newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'imageSnagger');
-    newDiv.style.position = 'fixed';
-    newDiv.style.bottom = '0';
-    newDiv.style.right = '0';
-    newDiv.style.top = '0';
+    // newDiv.style.position = 'fixed';
+    newDiv.style.float = 'right';
+    // newDiv.style.bottom = '0';
+    // newDiv.style.right = '0';
+    // newDiv.style.top = '0';
     newDiv.style.backgroundColor = "#eee";
     newDiv.style.padding = '0.4em 1em';
     newDiv.style.height = "100%";
     newDiv.style.width = "20%";
     newDiv.style.overflow= "scroll";
-  newDiv.style.fontFamily = 'monospace';
+    newDiv.style.fontFamily = 'monospace';
     newDiv.style.zIndex = '100000000';
     newDiv.innerHTML = "hello world";
-    document.body.appendChild(newDiv);
+    newDiv.setAttribute('class', "second");
+
+
+    if (document.body.firstChild)
+      document.body.insertBefore(newDiv, document.body.firstChild);
+    else
+      document.body.appendChild(newDiv);
+
+    // document.body.appendChild(newDiv);
     //     numImages = images.length;
         window.rachelIggyNewDiv = newDiv;
     window.rachelIggyAllImages = [];
@@ -53,30 +68,16 @@ window.rachelIggyMigrateImage = function(id){
       newDiv.appendChild(newImage);
     }
   }
+
 };
+
+    // var largeDiv = document.createElement('div');
+    // largeDiv.setAttribute('id', 'currentWindow');
+    // document.body.appendChild(largeDiv);
+    // largeDiv.innerHTML = "hello world";
+    // $('#largeDiv').load('var pathname = window.location.pathname;');
 
 
 init();
 
 })(window);
-
-
-  // for (var i=0;i<numImages;i++){
-    //   var newImage = document.createElement('img');
-    //   newImage.setAttribute('src', images[i].src);
-    //   newDiv.appendChild(newImage);
-    // }
-
-    //     for (var i=0;i<images.length;i++){
-    //     var newImage = document.createElement('img');
-    //     newImage.setAttribute('src', images[i].src);
-    //     newDiv.appendChild(newImage);
-    //   if(!confirm("Dude!!! " + images.length))
-    //      break;
-    // }
-    // newImage.setAttribute('src', images[0].src);
-    // for (var i=0;i<images.length;i++){
-    //   var newImage = document.createElement('img');
-    //   newImage.setAttribute('src', images[0].src);
-    //   newDiv.appendChild(newImage);
-    // }

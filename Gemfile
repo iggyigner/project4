@@ -6,6 +6,7 @@ gem "rails-bookmarklet", :git => "https://github.com/oliverfriedmann/rails-bookm
 #for user authentication
 
 
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
