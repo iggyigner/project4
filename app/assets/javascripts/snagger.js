@@ -3,7 +3,7 @@
 var init = function(){
   if (location.href.length >= 21 && location.href.substring(0,21) == "http://localhost:3000")
     return;
-var images = document.getElementsByTagName('img');
+var images = document.getElementsByTagName('img', 'div');
   if (images.length == 0)
     alert("No images here");
   else
@@ -21,8 +21,9 @@ var setupSnagger = function(images){
     newDiv.style.backgroundColor = "#eee";
     newDiv.style.padding = '0.4em 1em';
     newDiv.style.height = "100%";
-    newDiv.style.width = "100%";
-    newDiv.style.fontFamily = 'monospace';
+    newDiv.style.width = "20%";
+    newDiv.style.overflow= "scroll";
+  newDiv.style.fontFamily = 'monospace';
     newDiv.style.zIndex = '100000000';
     newDiv.innerHTML = "hello world";
     document.body.appendChild(newDiv);
@@ -40,7 +41,7 @@ var setupSnagger = function(images){
         imgButton.style.zIndex=2147483640;
         images[i].parentNode.insertBefore(imgButton, images[i].nextSibling)
   rachelIggyAllImages.push(images[i]);
-          newDiv.appendChild(images[i]);
+          // newDiv.appendChild(images[i]);
 
       }
     }
@@ -50,11 +51,8 @@ window.rachelIggyMigrateImage = function(id){
       newImage.setAttribute('src', rachelIggyAllImages[id].src);
       newDiv.appendChild(document.createElement('br'));
       newDiv.appendChild(newImage);
-}
-  
-
+    }
   }
-
 };
 
 
