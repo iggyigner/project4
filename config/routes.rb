@@ -1,5 +1,10 @@
 Project4::Application.routes.draw do
-  root 'welcome#index'
+  root 'photos#index'
+
+  get 'photos' => 'photos#index', :as => :photos
+  get 'photos/new' => 'photos#new', :as => :new_photo
+  post 'photos' => 'photos#create'
+  get 'photos/:id' => 'photos#show', :as => :photo
   
   resources :users
   get 'auths/new' => 'auths#new', :as => :new_auth

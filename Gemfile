@@ -2,10 +2,18 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+
+# Bookmarklet gem
 gem "rails-bookmarklet", :git => "https://github.com/oliverfriedmann/rails-bookmarklet.git"
-#for user authentication
 
+# For user authentication
+gem 'bcrypt', github: 'codahale/bcrypt-ruby'
 
+# Include Paperclip gem
+gem "paperclip", "~> 4.1"
+
+# Hide private credentials
+gem "figaro"
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -13,7 +21,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
-gem 'bcrypt', github: 'codahale/bcrypt-ruby'
+
 
 
 # Use Uglifier as compressor for JavaScript assets

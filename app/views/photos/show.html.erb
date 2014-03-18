@@ -1,0 +1,10 @@
+<div class="show">
+
+	<h1>Photo Summary</h1>
+		<div>
+			<%= image_tag @photo.image.url(:medium) %>
+		</div>
+		<%#= link_to "Delete", photo_path, method: "delete" %><br />
+		<%#= link_to "Edit", edit_photo_path %><br />
+		<%#= link_to "Back", photos_path %><br />
+</div>

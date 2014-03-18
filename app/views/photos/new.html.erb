@@ -1,0 +1,18 @@
+<h1>New Photo:</h1>
+
+<div>
+	<%= form_for @photo do |p| %>
+		<div>
+			<%= p.label :image, "Image" %>
+			<%= p.file_field :image %>
+		</div>
+
+		<div>
+			<%= p.submit "Upload Photo" %>
+		</div>
+	<% end %>
+</div>
+<br />
+<br />
+<br />
+<%= link_to 'Back', photos_path %>
