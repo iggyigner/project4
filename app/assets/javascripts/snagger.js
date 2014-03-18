@@ -11,9 +11,13 @@ var images = document.getElementsByTagName('img', 'div');
   // location.href = "http://localhost:3000/?x=5"
 }
 
-    // var website = document.getElementsByTagName('body');
     // var wrapper = document.createElement('div');
-    // website.append('')
+    // var website = document.getElementsByTagName('div');
+    // var body = document.getElementsByTagName('body')[0];
+    // wrapper.setAttribute('class', 'container').css('float', 'left');
+
+    // body.appendChild(wrapper);
+
 
 
 var setupSnagger = function(images){
@@ -34,6 +38,7 @@ var setupSnagger = function(images){
     newDiv.style.zIndex = '100000000';
     newDiv.innerHTML = "hello world";
     newDiv.setAttribute('class', "second");
+
 
 
     if (document.body.firstChild)
