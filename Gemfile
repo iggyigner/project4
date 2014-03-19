@@ -11,8 +11,10 @@ gem 'bcrypt', github: 'codahale/bcrypt-ruby'
 
 # Include Paperclip gem
 gem "paperclip", "~> 4.1"
+#Enable Google Cloud storage
+gem "fog"
 
-# Hide private credentials
+# Hides all private credentials by placing these secret keys into ignored file in .gitignore
 gem "figaro"
 
 # Use postgresql as the database for Active Record
@@ -21,8 +23,6 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
-
-
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
