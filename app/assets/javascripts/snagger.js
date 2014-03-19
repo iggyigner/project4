@@ -1,4 +1,4 @@
-;(function(){
+(function(){
 
 var init = function(){
   if (location.href.length >= 21 && location.href.substring(0,21) == "http://localhost:3000")
@@ -8,16 +8,15 @@ var images = document.getElementsByTagName('img', 'div');
     alert("No images here");
   else
     setupSnagger(images);
-  // location.href = "http://localhost:3000/?x=5"
 }
 
-    // var wrapper = document.createElement('div');
-    // var website = document.getElementsByTagName('div');
-    // var body = document.getElementsByTagName('body')[0];
-    // wrapper.setAttribute('class', 'container').css('float', 'left');
 
-    // body.appendChild(wrapper);
-
+var body_contents = document.getElementsByTagName('body')[0].innerHTML;
+var wrap = "<div id = 'rachelwrapper'>" + body_contents + "</div>";
+document.getElementsByTagName('body')[0].innerHTML = wrap;
+var rachelwrapper = document.getElementById('rachelwrapper');
+rachelwrapper.style.float = 'left';
+rachelwrapper.style.width = "70%";
 
 
 var setupSnagger = function(images){
@@ -30,9 +29,8 @@ var setupSnagger = function(images){
     // newDiv.style.right = '0';
     // newDiv.style.top = '0';
     newDiv.style.backgroundColor = "#eee";
-    newDiv.style.padding = '0.4em 1em';
     newDiv.style.height = "100%";
-    newDiv.style.width = "20%";
+    newDiv.style.width = "30%";
     newDiv.style.overflow= "scroll";
     newDiv.style.fontFamily = 'monospace';
     newDiv.style.zIndex = '100000000';
@@ -42,7 +40,8 @@ var setupSnagger = function(images){
 
 
     if (document.body.firstChild)
-      document.body.insertBefore(newDiv, document.body.firstChild);
+      // document.body.insertBefore(newDiv, document.body.firstChild);
+    document.body.insertBefore(newDiv, document.nextSibling);
     else
       document.body.appendChild(newDiv);
 
