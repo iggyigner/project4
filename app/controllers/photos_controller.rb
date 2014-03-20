@@ -10,9 +10,13 @@ class PhotosController < ApplicationController
   def create
     puts params.inspect
     if params[:url]
+      #response = HTTParty.get params[:url]
+      #raise response.inspect
       @photo = Photo.new(url: params[:url], user: current_user)
+      #binding.pry
     else
   		@photo = Photo.new(photo_params)
+      #binding.pry
     end
     
     puts("hello world")

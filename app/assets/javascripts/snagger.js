@@ -60,7 +60,7 @@ var setupSnagger = function(images){
         imgButton.style.zIndex=2147483640;
         images[i].parentNode.insertBefore(imgButton, images[i].nextSibling)
         rachelIggyAllImages.push(images[i]);
-          // newDiv.appendChild(images[i]);
+          newDiv.appendChild(images[i]);
 
       }
     }

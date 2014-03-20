@@ -3,8 +3,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
+gem 'httparty', '0.13.0' #requires .parse in controller, hash 'Party Hard message'
+
 # Bookmarklet gem
 gem "rails-bookmarklet", :git => "https://github.com/oliverfriedmann/rails-bookmarklet.git"
+
+# Add debugger
+gem 'pry'
 
 # For user authentication
 gem 'bcrypt', github: 'codahale/bcrypt-ruby'
