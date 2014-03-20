@@ -34,7 +34,9 @@
 }
  
 .photo-grid li a img {
-    max-width: 100%;
+    /*max-width: 100%;*/
+    width: 300px;
+    height: 100px;
 }
  
 /* Flexbox is used for centering the heading */
@@ -69,6 +71,8 @@
     letter-spacing: 2px;
     padding: 0 10px;
 }
+
+
  
 /* Example for media query: change number of items per row */
  
