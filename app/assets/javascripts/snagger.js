@@ -59,7 +59,7 @@ var setupSnagger = function(images){
         imgButton.style.position="absolute";
         imgButton.style.zIndex=2147483640;
         images[i].parentNode.insertBefore(imgButton, images[i].nextSibling)
-  rachelIggyAllImages.push(images[i]);
+        rachelIggyAllImages.push(images[i]);
           // newDiv.appendChild(images[i]);
 
       }
@@ -70,18 +70,136 @@ window.rachelIggyMigrateImage = function(id){
       newImage.setAttribute('src', rachelIggyAllImages[id].src);
       newDiv.appendChild(document.createElement('br'));
       newDiv.appendChild(newImage);
+
+
+
+// var http = new XMLHttpRequest();
+// var url = "http://localhost:3000/photos";
+// // var params = "yoyoyo";
+// http.open("POST", "http://localhost:3000/photos", true);
+
+// // //Send the proper header information along with the request
+// // http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+// // http.setRequestHeader("Content-length", params.length);
+// // http.setRequestHeader("Connection", "close");
+
+// http.onreadystatechange = function() {//Call a function when the state changes.
+//     if(http.readyState == 4 && http.status == 200) {
+//         console.log(http.responseText);
+//     }
+// }
+// http.send("photo=" + rachelIggyAllImages[id].src);
+
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/photos/?url=" + rachelIggyAllImages[id].src, true);
+      xhr.onreadystatechange = function(yaItsAwesome, xyz) {
+        console.log('hello world' + this.readyState);
+        if(this.readyState == 4) {
+        window.alert("works");
+        console.log(yaItsAwesome, xyz);
+      }
+    }
+
+    xhr.send();
+
+
     }
   }
 
 };
 
-    // var largeDiv = document.createElement('div');
-    // largeDiv.setAttribute('id', 'currentWindow');
-    // document.body.appendChild(largeDiv);
-    // largeDiv.innerHTML = "hello world";
-    // $('#largeDiv').load('var pathname = window.location.pathname;');
-
 
 init();
 
 })(window);
+
+
+
+
+// $(function(){
+//     // ADD EXTERNAL STYLESHEET bookmark.css    
+//     $('head').append("<link rel='stylesheet', type='text/css', href='http://cinegrain.com/wp-content/uploads/2014/02/bookmark.css'>");
+
+//     $(function(){
+//         // ADD GUI ELEMENTS TO HOST PAGE
+//         $( 'body' ).prepend( "<div class='Catchframe123'></div>" );
+//         $( '.Catchframe123' ).prepend( "<div class='CatchframeHeader123'><p>Catchframe</p></div>" );
+//         $( 'body' ).prepend( "<div class='CatchframeDark123'></div>" );
+
+//         // CLONE ALL IMAGES (bigger than height:75px) INTO GUI
+//         $( 'img' ).each(function() {
+
+//             if ( $( this ).height() >= 75 ) {
+//                 $( this ).clone().appendTo( '.Catchframe123' );
+//             }
+
+//         });
+
+//         // SLIDE IN FROM RIGHT
+//         $( '.Catchframe123' ).delay( .01 ).animate({ opacity:'1.0', width:'200px' }, 400);
+//         $( '.CatchframeDark123' ).delay( .01 ).animate({ opacity:'1.0' }, 400);
+
+
+
+//         // FINISHED ADDING ELEMENTS TO DOM ******************************************************************
+
+//         // IMG CLICKED - POST
+//         $( 'img' ).click(function() {
+
+//           //   $.post( "http://catchframe.herokuapp.com/bookmarks", { url:  window.location.href, src: this.src, name: this.alt }).done(function( data ) {
+//           //   $( 'body' ).prepend( "<div class='lookmarked'></div>" );
+//           //   $( '.lookmarked' ).animate({ opacity:'0.0' }, 600, function() {
+//           //       $( '.lookmarked' ).remove(); 
+//           //   });
+//           // });
+
+//           $.ajax({ 
+//                url: "http://catchframe.herokuapp.com/bookmarks", 
+//                data: { url:  window.location.href, src: this.src, name: this.alt },
+//                crossDomain: true
+//                })
+//                .done(function( data ) {
+//                     $( 'body' ).prepend( "<div class='lookmarked'></div>" );
+//                     $( '.lookmarked' ).animate({ opacity:'0.0' }, 600, function() {
+//                          $( '.lookmarked' ).remove(); 
+//                     });
+//                });
+//           });
+
+//         // LARGER IMAGE TO LEFT ON HOVER
+//         // Hover over size change
+//             $('.Catchframe123 img').on('mouseenter',function () {
+//                 $( 'body' ).prepend( "<div class='CatchframeLargerImage123'></div>" );
+//                 $( this ).clone().appendTo( '.CatchframeLargerImage123' );
+
+//                 $( this ).on('mouseleave',function () {
+//                     $( '.CatchframeLargerImage123' ).delay( 1 ).remove();
+//                 });
+//             });
+
+//         // CLEAR ALL WHEN CLICKED OUTSIDE OF FOCUS
+//         $( ".CatchframeDark123" ).click(function() { 
+
+//             $( '.CatchframeDark123' ).animate({ opacity:'0.0' }, 400, function() {
+//                 $( '.CatchframeDark123' ).remove();
+//             });
+//             $( '.CatchframeLargerImage123' ).remove();
+//             $( '.Catchframe123' ).remove();
+//             $( "<link rel='stylesheet', type='text/css', href='bookmark.css'>" ).remove();
+
+//         });
+//     });
+// });
+
+
+
+
+
+// var params="v=66b12127";
+// xhr.onreadystatechange = function() {
+//     if(this.readyState == 4) {
+//         window.alert("works");
+//     }
+// }
+// xhr.send(params);
