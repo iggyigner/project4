@@ -8,7 +8,14 @@ class PhotosController < ApplicationController
   end
 
   def create
-		@photo = Photo.new(photo_params)
+    puts params.inspect
+    if params[:url]
+      @photo = Photo.new(url: params[:url], user: current_user)
+    else
+  		@photo = Photo.new(photo_params)
+    end
+    
+    puts("hello world")
 		if @photo.save
 			#redirect_to photo_path(@photo)
 			redirect_to photos_path
@@ -26,6 +33,6 @@ class PhotosController < ApplicationController
 
 	private
 	def photo_params
-		params.require(:photo).permit(:image, :authenticity_token)
+		params.require(:photo).permit(:url, :image, :authenticity_token)
 	end
 end
