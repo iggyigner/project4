@@ -1,3 +1,4 @@
+require 'open-uri'
 class Photo < ActiveRecord::Base
 	belongs_to :user
 
@@ -8,5 +9,10 @@ class Photo < ActiveRecord::Base
 			:default_url => "/images/:style/missing.png"
   
   #verifies that image content type has a image/something (png, jpeg, whatever).
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  do_not_validate_attachment_file_type :image
+
+  def image_url=(url)
+  	self.image = open(url)
+  end
 end
