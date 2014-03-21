@@ -11,12 +11,16 @@ class PhotosController < ApplicationController
     puts params.inspect
     if params[:url]
       # response = HTTParty.get params[:url]
-      @photo = Photo.new(url: params[:url], user: current_user)
+      @photo = Photo.new(url: params[:url], user_id: current_user.id)
       @photo.image_url = params[:url]
-      #binding.pry
+      binding.pry
     else
   		@photo = Photo.new(photo_params)
     end
+
+    # if current_user
+    #   @photo.user_id = current_user.id
+    # end
     
     puts("hello world")
 		if @photo.save
@@ -36,6 +40,6 @@ class PhotosController < ApplicationController
 
 	private
 	def photo_params
-		params.require(:photo).permit(:url, :image, :authenticity_token)
+		params.require(:photo).permit(:url, :user_id, :user, :image, :authenticity_token)
 	end
 end
