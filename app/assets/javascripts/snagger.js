@@ -19,6 +19,7 @@ rachelwrapper.style.float = 'left';
 rachelwrapper.style.width = "70%";
 
 
+
 var setupSnagger = function(images){
   if ( !document.getElementById('imageSnagger') ) {
     var newDiv = document.createElement('div');
@@ -53,12 +54,20 @@ var setupSnagger = function(images){
   // Capture just the images that are large enough
       if(images[i].width > 80 && images[i].height > 40)
       {
-        var imgButton = document.createElement('input');
-        imgButton.setAttribute('type', 'button');
-        imgButton.setAttribute('onclick', 'rachelIggyMigrateImage('+rachelIggyAllImages.length+');');
-        imgButton.style.position="absolute";
-        imgButton.style.zIndex=2147483640;
-        images[i].parentNode.insertBefore(imgButton, images[i].nextSibling)
+        var newFrame = document.createElement('div');
+        newFrame.setAttribute('class', 'frame');
+        newFrame.innerHTML = images[i].setAttribute('onclick', 'rachelIggyMigrateImage('+rachelIggyAllImages.length+');');
+        // images[i].appendChild('<div class="frame"></div>');
+        // var frameHolder = document.getElementsByTagName('img').appendChild('<div class="frame"></div>');
+        // frameHolder.style.width = '200px';
+        // frameHolder.style.height = '200px';
+        // frameHolder.style.overflow = 'none';
+        // var imgButton = document.createElement('input');
+        // imgButton.setAttribute('type', 'button');
+        // imgButton.setAttribute('onclick', 'rachelIggyMigrateImage('+rachelIggyAllImages.length+');');
+        // imgButton.style.position="absolute";
+        // imgButton.style.zIndex=2147483640;
+        // images[i].parentNode.insertBefore(imgButton, images[i].nextSibling)
         rachelIggyAllImages.push(images[i]);
           newDiv.appendChild(images[i]);
 
