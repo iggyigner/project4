@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
       # response = HTTParty.get params[:url]
       @photo = Photo.new(url: params[:url], user_id: current_user.id)
       @photo.image_url = params[:url]
-      binding.pry
+      #binding.pry
     else
   		@photo = Photo.new(photo_params)
     end

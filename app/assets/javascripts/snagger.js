@@ -93,6 +93,7 @@ window.rachelIggyMigrateImage = function(id){
 
       var xhr = new XMLHttpRequest();
       xhr.open("POST", "http://localhost:3000/photos/?url=" + rachelIggyAllImages[id].src, true);
+      xhr.withCredentials = "true";
       xhr.onreadystatechange = function(yaItsAwesome, xyz) {
         console.log('hello world' + this.readyState);
         if(this.readyState == 4) {
@@ -102,9 +103,10 @@ window.rachelIggyMigrateImage = function(id){
     }
 
     xhr.send();
-
-
+   
     }
+
+
   }
 
 };
