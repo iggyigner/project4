@@ -10,9 +10,12 @@ class Photo < ActiveRecord::Base
   
   #verifies that image content type has a image/something (png, jpeg, whatever).
   # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  do_not_validate_attachment_file_type :image
+  do_not_validate_attachment_file_type :image, :content_type => /\Aimage\/.*\Z/
 
   def image_url=(url)
   	self.image = open(url)
   end
 end
+
+
+

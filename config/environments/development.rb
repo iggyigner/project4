@@ -11,6 +11,10 @@ Project4::Application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  
+
+  Paperclip.options[:command_path] = 'C:/Progra~1/ImageM~1.8-q'
+
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

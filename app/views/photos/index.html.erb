@@ -1,30 +1,57 @@
- <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://localhost:3000/assets/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snag It</a>  
+<!--  <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://localhost:3000/assets/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snag It</a>  
+ -->
+
+<%#= link_to "New User", {:controller => 'users', :action => 'new'} %>
+<%#= link_to "Login", {:controller => 'auths', :action => 'new'} %>
+<%#= link_to "Logout", {:controller => 'auths', :action => 'destroy'}, {:method => :delete} %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SocialKarma</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
 
-<%= link_to "New User", {:controller => 'users', :action => 'new'} %><br>
-<%= link_to "Login", {:controller => 'auths', :action => 'new'} %><br>
-<%= link_to "Logout", {:controller => 'auths', :action => 'destroy'}, {:method => :delete} %>
+<body>
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="<%= root_path %>">Image<span id="title">Snaggr</span></a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+       <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://localhost:3000/assets/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snag It</a> 
 
+      <ul class="right">
+        <li class="has-dropdown">
+          <% if current_user %>
+            <a href="<%= photos_path %>", class="dashboard">Hello, <%= current_user.email == nil ? current_user.email : current_user.email%></a>
+            <ul class="dropdown">
+              <li> <%#= link_to "Jobs Dashboard", jobs_path %> </li>
+              <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>    
+            </ul>
+        </li>
+        <% else %>
+          <ul class="right">
+            <li><%= link_to "Log In", {:controller => 'auths', :action => 'new'} %></li>
+            <li><%= link_to "Sign Up", {:controller => 'users', :action => 'new'} %></li>
+          </ul>
+        <% end %>
+        </ul>
+      </section>
+    </nav>
+    
+    <%= javascript_include_tag "application" %>
+    <%= yield %>
+    
+  </body>
 
-
-<!-- <ul class="photo-grid">
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placerholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-    <li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-	<li><a href="#"><img src="images/placeholder.jpg" /><div><h3>Add</h3></div></a></li>
-</ul> -->
 
 <ul class="photo-grid">
     <% @photos.each do |photo| %>
