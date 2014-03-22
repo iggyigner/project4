@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
 	has_many :photos
 	has_many :favorites
-	has_many :photos, through: :favorites
+	# has_many :photos, through: :favorites
 
 	attr_accessor :password
 

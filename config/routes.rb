@@ -12,6 +12,8 @@ Project4::Application.routes.draw do
   post 'auths' => 'auths#create'
   delete 'auths' => 'auths#destroy'
 
+  resources :favorites
+
   # get "welcome/index"
   # get 'users' => 'users#index', :as => :users
 
