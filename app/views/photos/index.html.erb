@@ -34,7 +34,8 @@
             <a href="<%= photos_path %>", class="dashboard">Hello, <%= current_user.email == nil ? current_user.email : current_user.email%></a>
             <ul class="dropdown">
               <li> <%#= link_to "Jobs Dashboard", jobs_path %> </li>
-              <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>    
+              <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>
+              <li> <%= link_to "My Profile", user_path(current_user) %> </li>   
             </ul>
         </li>
         <% else %>

@@ -5,6 +5,7 @@ Project4::Application.routes.draw do
   get 'photos/new' => 'photos#new', :as => :new_photo
   post 'photos' => 'photos#create'
   get 'photos/:id' => 'photos#show', :as => :photo
+  delete 'photos/:id' => 'photos#destroy'
   
   resources :users
   get 'auths/new' => 'auths#new', :as => :new_auth

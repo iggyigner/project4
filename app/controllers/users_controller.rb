@@ -15,4 +15,9 @@ class UsersController < ApplicationController
 			render action: "index"
 		end
 	end
+
+  def show
+    @user = User.find(params[:id])
+    @photos = @user.photos.all
+  end
 end
