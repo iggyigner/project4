@@ -41,6 +41,13 @@ class PhotosController < ApplicationController
     redirect_to :root
   end
 
+  def like
+    user = current_user
+    photo = Photo.find(params[:id])
+    user.like!(photo)
+    redirect_to :root
+  end
+
 	private
 	def photo_params
 		params.require(:photo).permit(:url, :user_id, :user, :image, :authenticity_token)

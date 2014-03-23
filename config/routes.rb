@@ -6,6 +6,7 @@ Project4::Application.routes.draw do
   post 'photos' => 'photos#create'
   get 'photos/:id' => 'photos#show', :as => :photo
   delete 'photos/:id' => 'photos#destroy'
+  get 'photos/like/:id' => 'photos#like', :as => :like_photo
   
   resources :users
   get 'auths/new' => 'auths#new', :as => :new_auth
@@ -13,6 +14,8 @@ Project4::Application.routes.draw do
   delete 'auths' => 'auths#destroy'
 
   resources :favorites
+
+
 
   # get "welcome/index"
   # get 'users' => 'users#index', :as => :users

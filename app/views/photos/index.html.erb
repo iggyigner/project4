@@ -60,7 +60,7 @@
             <%#= photo.filename %>
             <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
                 <%= image_tag photo.image.url(:medium) %>
-                <div><h3>Add</h3></div>
+                <div><h3><%= link_to "Add", like_photo_path(photo) %></h3></div>
             <% end %> <!-- close of a tag -->
         </li>
     <% end %>
