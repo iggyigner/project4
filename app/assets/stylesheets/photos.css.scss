@@ -24,6 +24,7 @@
     width: 16.6666667%; /* Fallback */
     width: -webkit-calc(100% / 6);
     width: calc(100% / 6);
+
 }
  
 .photo-grid li a,
@@ -37,10 +38,11 @@
     /*max-width: 100%;*/
     width: 300px;
     height: 100px;
+    z-index: -1;
 }
  
 /* Flexbox is used for centering the heading */
-.photo-grid li a div {
+.add, .photo-grid li div a{
     position: absolute;
     left: 20px;
     top: 20px;
@@ -58,12 +60,13 @@
     text-align: center;
     opacity: 0;
 }
+
  
 .photo-grid li a:hover div {
     opacity: 1;
 }
  
-.photo-grid li a div h3 {
+.add, .photo-grid li a div h3 {
     width: 100%;
     color: #fff;
     text-transform: uppercase;

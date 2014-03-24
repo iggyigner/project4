@@ -68,8 +68,14 @@ var setupSnagger = function(images){
         // imgButton.style.position="absolute";
         // imgButton.style.zIndex=2147483640;
         // images[i].parentNode.insertBefore(imgButton, images[i].nextSibling)
+        var containerDiv = document.createElement('div');
         rachelIggyAllImages.push(images[i]);
-          newDiv.appendChild(images[i]);
+          containerDiv.style.border = "2px solid lime";
+          containerDiv.style.margin = "5px";
+          containerDiv.onmouseover = function(){this.style.border="5px solid blue";}
+          containerDiv.onmouseout = function(){this.style.border="2px solid lime";}
+          containerDiv.appendChild(images[i]);
+          newDiv.appendChild(containerDiv);
 
       }
     }

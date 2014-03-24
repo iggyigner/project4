@@ -11,9 +11,6 @@ gem "rails-bookmarklet", :git => "https://github.com/oliverfriedmann/rails-bookm
 # Add 'like' feature
 gem "socialization"
 
-# Add debugger
-gem 'pry'
-
 # For user authentication
 gem 'bcrypt', github: 'codahale/bcrypt-ruby'
 
