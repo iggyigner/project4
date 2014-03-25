@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 	has_many :photos
 	#has_many :favorites
 	# has_many :photos, through: :favorites
-	acts_as_liker
 
 	attr_accessor :password
 

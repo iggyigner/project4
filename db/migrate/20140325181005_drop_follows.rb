@@ -1,5 +1,9 @@
-class CreateFollows < ActiveRecord::Migration
-  def change
+class DropFollows < ActiveRecord::Migration
+  def up
+  	drop_table :follows
+  end
+
+  def down
     create_table :follows do |t|
       t.string  :follower_type
       t.integer :follower_id

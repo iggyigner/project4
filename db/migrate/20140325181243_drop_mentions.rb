@@ -1,6 +1,10 @@
-class CreateMentions < ActiveRecord::Migration
-  def change
-    create_table :mentions do |t|
+class DropMentions < ActiveRecord::Migration
+  def up
+  	drop_table :mentions
+  end
+
+  def down
+  	create_table :mentions do |t|
       t.string  :mentioner_type
       t.integer :mentioner_id
       t.string  :mentionable_type

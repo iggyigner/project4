@@ -8,9 +8,6 @@ gem 'httparty', '0.13.0' #requires .parse in controller, hash 'Party Hard messag
 # Bookmarklet gem
 gem "rails-bookmarklet", :git => "https://github.com/oliverfriedmann/rails-bookmarklet.git"
 
-# Add 'like' feature
-gem "socialization"
-
 # For user authentication
 gem 'bcrypt', github: 'codahale/bcrypt-ruby'
 

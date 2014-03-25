@@ -3,9 +3,6 @@ class Photo < ActiveRecord::Base
 	belongs_to :user
 	#has_many :favorites
 	#has_many :users, through: :favorites
-	has_many :like
-	has_many :likes
-	acts_as_likeable
 
 	has_attached_file :image, 
 		:styles => { 

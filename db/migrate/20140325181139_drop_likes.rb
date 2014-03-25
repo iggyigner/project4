@@ -1,6 +1,10 @@
-class CreateLikes < ActiveRecord::Migration
-  def change
-    create_table :likes do |t|
+class DropLikes < ActiveRecord::Migration
+  def up
+  	drop_table :likes
+  end
+
+  def down
+  	create_table :likes do |t|
       t.string  :liker_type
       t.integer :liker_id
       t.string  :likeable_type
