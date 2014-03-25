@@ -1,10 +1,3 @@
-<!--  <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://localhost:3000/assets/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snag It</a>  
- -->
-
-<%#= link_to "New User", {:controller => 'users', :action => 'new'} %>
-<%#= link_to "Login", {:controller => 'auths', :action => 'new'} %>
-<%#= link_to "Logout", {:controller => 'auths', :action => 'destroy'}, {:method => :delete} %>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,7 +26,6 @@
           <% if current_user %>
             <a href="<%= photos_path %>", class="dashboard">Hello, <%= current_user.email == nil ? current_user.email : current_user.email%></a>
             <ul class="dropdown">
-              <li> <%#= link_to "Jobs Dashboard", jobs_path %> </li>
               <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>
               <li> <%= link_to "My Profile", user_path(current_user) %> </li>   
             </ul>
@@ -56,12 +48,14 @@
 
 <ul class="photo-grid">
     <% @photos.each do |photo| %>
-        <li>
+      <li>
+        </div>
             <%#= photo.filename %>
             <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
                 <%= image_tag photo.image.url(:medium) %>
                 <div><%= link_to "Add", like_photo_path(photo), class: "add" %></div>
             <% end %> <!-- close of a tag -->
-        </li>
+        </div>
+      </li>
     <% end %>
 </ul>
