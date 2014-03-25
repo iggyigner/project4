@@ -56,6 +56,10 @@ group :development, :test do
 	gem 'pry'
 end
 
+group :development do
+  gem 'kaleidoscope', path: '~/gems/kaleidoscope'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

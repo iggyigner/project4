@@ -1,6 +1,8 @@
 require 'open-uri'
 class Photo < ActiveRecord::Base
 	belongs_to :user
+  has_colors
+  has_many :photo_colors
 	#has_many :favorites
 	#has_many :users, through: :favorites
 
