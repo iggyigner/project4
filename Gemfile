@@ -57,7 +57,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'kaleidoscope', path: '~/gems/kaleidoscope'
+  gem 'kaleidoscope', github: 'joshsmith/kaleidoscope'
 end
 
 # Use ActiveModel has_secure_password

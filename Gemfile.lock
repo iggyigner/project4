@@ -5,14 +5,8 @@ GIT
     bcrypt (3.1.7)
 
 GIT
-  remote: https://github.com/oliverfriedmann/rails-bookmarklet.git
-  revision: 99bb67ddbaf84779a10156196bfaccfe4de67029
-  specs:
-    rails-bookmarklet (0.0.1)
-      rails
-
-PATH
-  remote: ~/gems/kaleidoscope
+  remote: git://github.com/joshsmith/kaleidoscope.git
+  revision: 39198d02ef3cdc3436e2cec35352167a3c31f048
   specs:
     kaleidoscope (0.0.1)
       activemodel (>= 3.0.0)
@@ -22,6 +16,13 @@ PATH
       paperclip (>= 3.3.0)
       rails (>= 4.0.0)
       rmagick (>= 2.13.0)
+
+GIT
+  remote: https://github.com/oliverfriedmann/rails-bookmarklet.git
+  revision: 99bb67ddbaf84779a10156196bfaccfe4de67029
+  specs:
+    rails-bookmarklet (0.0.1)
+      rails
 
 GEM
   remote: https://rubygems.org/
@@ -152,7 +153,7 @@ GEM
       activesupport (= 4.0.3)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.2.0)
+    rake (10.2.1)
     rdoc (4.1.1)
       json (~> 1.4)
     rmagick (2.13.2)
