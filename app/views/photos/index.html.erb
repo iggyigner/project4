@@ -60,36 +60,15 @@
     <% end %>
 </ul>
 
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#660000'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#990000'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#cc0000'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#cc3333'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#ea4c88'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#993399'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#663399'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#333399'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#0066cc'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#0099cc'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#66cccc'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#77cc33'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#669900'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#336600'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#666600'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#999900'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#cccc33'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#ffff00'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#ffcc33'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#ff9900'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#ff6600'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#cc6633'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#996633'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#663300'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#000000'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#999999'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#cccccc'  }%>
-<%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#ffffff'  }%>
+<div style="background-color: #660000;" class="box">
+  <%= link_to "Color Search", {controller: 'photos', action: 'color_search', color: '#660000'  }%>
+</div>
 
 
 
-
-
+<% @colors.each do |color| %>
+  
+  <%= link_to c_search_path(color: color) do %>
+    <div style="background-color: #<%= color %>;" class="box"></div>
+  <% end %>
+<% end %>
