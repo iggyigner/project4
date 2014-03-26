@@ -62,6 +62,10 @@ group :development do
   gem 'kaleidoscope', github: 'joshsmith/kaleidoscope'
 end
 
+group :production do
+  gem 'kaleidoscope', github: 'joshsmith/kaleidoscope'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
