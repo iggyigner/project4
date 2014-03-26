@@ -1,6 +1,8 @@
 Project4::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -18,6 +20,9 @@ Project4::Application.configure do
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
+
+  Paperclip.options[:command_path] = 'C:/Progra~1/ImageM~1.8-q'
+
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
