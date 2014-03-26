@@ -49,7 +49,7 @@ class PhotosController < ApplicationController
   end
 
   def color_search
-    @photos = Photo.matching_color('#000000')
+    @photos = Photo.matching_color(params[:color])
     # render color_search partial
   end
 
