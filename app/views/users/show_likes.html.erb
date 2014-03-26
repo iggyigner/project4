@@ -1,15 +1,14 @@
-<h1>Profile page</h1>
+<h1>Likes page</h1>
 <h3>Hi, <%= @user.email %></h3><br>
 <%= link_to "My Adds", {controller: 'users', action: 'show'}%><br>
 <%= link_to "My Likes", {controller: 'users', action: 'show_likes'}%>
 
 <ul class="photo-grid">
-    <% @photos.each do |photo| %>
+    <% @likes.each do |like| %>
         <li>
             <%#= photo.filename %>
-            <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
-                <%= image_tag photo.image.url(:medium) %>
-                <div><h3>Add</h3></div>
+            <%= link_to photo_path(like.photo_id) do %> <!-- opening for you a tag -->
+                <%= image_tag like.photo.image.url(:medium) %>
             <% end %> <!-- close of a tag -->
         </li>
     <% end %>

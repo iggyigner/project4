@@ -20,4 +20,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @photos = @user.photos.all
   end
+
+  def show_likes
+    @user = User.find(params[:id])
+    @likes = @user.likes.includes(:photo)
+    @photos = @user.photos.all
+  end
 end

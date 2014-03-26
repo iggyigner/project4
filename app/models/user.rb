@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
 	has_many :photos
 	#has_many :favorites
 	# has_many :photos, through: :favorites
+	has_many :likes
+	has_many :liked_photos, through: :likes, source: :photo
+
 
 	attr_accessor :password
 

@@ -5,6 +5,7 @@ class Photo < ActiveRecord::Base
   has_many :photo_colors
 	#has_many :favorites
 	#has_many :users, through: :favorites
+	has_many :likes
 
 	has_attached_file :image, 
 		:styles => { 

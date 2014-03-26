@@ -47,10 +47,17 @@ class PhotosController < ApplicationController
   end
 
   def like
-    user = current_user
-    photo = Photo.find(params[:id])
-    user.like!(photo)
+    @like = Like.new
+    @user = current_user
+    @photo = Photo.find(params[:id])
+    @like.user_id = @user.id
+    @like.photo_id = @photo.id
+    @like.save
     redirect_to :root
+    # user = current_user
+    # photo = Photo.find(params[:id])
+    # user.like!(photo)
+    # redirect_to :root
   end
 
   def color_search

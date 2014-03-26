@@ -10,6 +10,8 @@ Project4::Application.routes.draw do
   get 'photos/colors/:color' => 'photos#color_search', :as => :c_search
   
   resources :users
+  get 'users/likes/:id' => 'users#show_likes', :as => :show_likes
+
   get 'auths/new' => 'auths#new', :as => :new_auth
   post 'auths' => 'auths#create'
   delete 'auths' => 'auths#destroy'
