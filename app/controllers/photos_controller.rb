@@ -48,6 +48,11 @@ class PhotosController < ApplicationController
     redirect_to :root
   end
 
+  def color_search
+    @photos = Photo.matching_color('#000000')
+    # render color_search partial
+  end
+
 	private
 	def photo_params
 		params.require(:photo).permit(:url, :user_id, :user, :image, :authenticity_token)

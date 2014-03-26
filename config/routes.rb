@@ -7,6 +7,7 @@ Project4::Application.routes.draw do
   get 'photos/:id' => 'photos#show', :as => :photo
   delete 'photos/:id' => 'photos#destroy'
   get 'photos/like/:id' => 'photos#like', :as => :like_photo
+  get 'photos/colors/:color' => 'photos#color_search'
   
   resources :users
   get 'auths/new' => 'auths#new', :as => :new_auth
