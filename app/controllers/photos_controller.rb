@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   # For all responses in this controller, return the CORS access control headers.
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST'
+    headers['Access-Control-Allow-Methods'] = 'POST,GET,OPTION'
     headers['Access-Control-Max-Age'] = "1728000"
   end
 
@@ -17,11 +17,11 @@ class PhotosController < ApplicationController
 
   def cors_preflight_check
     headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST'
-    headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version'
+    headers['Access-Control-Allow-Methods'] = 'POST,GET,OPTION'
+    headers['Access-Control-Allow-Headers'] = 'X-Requested-With'
     headers['Access-Control-Max-Age'] = '1728000'
   end
-  # *****************************************************************************************
+  # *******************************************************************************************
   def index
   	@photos = Photo.all
     @colors = ["660000", "990000", "cc0000", "cc3333", "ea4c88",
