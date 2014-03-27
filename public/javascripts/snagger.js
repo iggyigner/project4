@@ -3,7 +3,7 @@
 var init = function(){
   if (location.href.length >= 30 && location.href.substring(0,29) == "http://grappple.herokuapp.com")
   {
-    alert("well now...");
+    // alert("well now...");
     return;
   }
   alert(location.href);
