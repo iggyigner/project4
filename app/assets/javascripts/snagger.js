@@ -1,17 +1,13 @@
 (function(){
 
 var init = function(){
-  if (location.href == "http://grappple.herokuapp.com/")
-    {break;}
-  else {
-    var images = document.getElementsByTagName('img', 'div');
-    if (images.length == 0)
-      {break;
-      alert("No images here");}
-    else
-      {setupSnagger(images);}
-  }
-
+  if (location.href.length >= 30 && location.href.substring(0,30) == "grappple.herokuapp.com")
+    return;
+  var images = document.getElementsByTagName('img', 'div');
+  if (images.length == 0)
+    alert("No images here");
+  else
+    setupSnagger(images);
 }
 
 var setupSnagger = function(images){
