@@ -87,7 +87,7 @@ window.rachelIggyMigrateImage = function(id){
       alert(1);
       alert(rachelIggyAllImages[id].src);
       xhr.open("POST", "http://grappple.herokuapp.com/?url=" + rachelIggyAllImages[id].src, true);
-      xhr.withCredentials = "true";
+      xhr.withCredentials = true;
       xhr.onreadystatechange = function(yaItsAwesome, xyz) {
         console.log('hello world' + this.readyState);
         if(this.readyState == 4) {
