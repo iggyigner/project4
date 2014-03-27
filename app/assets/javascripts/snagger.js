@@ -1,7 +1,7 @@
 (function(){
 
 var init = function(){
-  if (location.href.length >= 22 && location.href.substring(0,22) == "grappple.herokuapp.com")
+  if (location.href.length >= 30 && location.href.substring(0,22) == "grappple.herokuapp.com")
     return;
   var images = document.getElementsByTagName('img', 'div');
   if (images.length == 0)
