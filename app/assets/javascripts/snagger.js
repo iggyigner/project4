@@ -1,7 +1,7 @@
 (function(){
 
 var init = function(){
-  if (location.href.length >= 21 && location.href.substring(0,21) == "https://grappple.herokuapp.com/")
+  if (location.href.length >= 21 && location.href.substring(0,21) == "http://grappple.herokuapp.com/")
     return;
   var images = document.getElementsByTagName('img', 'div');
   if (images.length == 0)
@@ -86,7 +86,7 @@ window.rachelIggyMigrateImage = function(id){
       var xhr = new XMLHttpRequest();
       alert(1);
       alert(rachelIggyAllImages[id].src);
-      xhr.open("POST", "https://grappple.herokuapp.com/?url=" + rachelIggyAllImages[id].src, true);
+      xhr.open("POST", "http://grappple.herokuapp.com/?url=" + rachelIggyAllImages[id].src, true);
       xhr.withCredentials = "true";
       xhr.onreadystatechange = function(yaItsAwesome, xyz) {
         console.log('hello world' + this.readyState);
