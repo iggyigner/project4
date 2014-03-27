@@ -16,7 +16,7 @@
 
 .photo-grid li {
     margin-left: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
     padding: 6px;
     position: relative;
     float: left;
@@ -97,9 +97,20 @@
         width: calc(100% / 2);
     }
 }
- 
-@media screen and (max-width: 660px) {
+
+/*@media screen and (device-aspect-ratio: 40/71) {*/
+@media screen and (max-width: 480px) {
     .photo-grid li {
-        width: 100%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        padding: 6px;
+        position: relative;
+        float: left;
+        overflow: hidden;
+        width: 33.3333333%; /* Fallback */
+        width: -webkit-calc(100% / 3);
+        width: calc(100% / 3);
+
     }
 }
+ 

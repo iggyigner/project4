@@ -12,14 +12,14 @@
     <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="<%= root_path %>">Image<span id="title">Snaggr</span></a></h1>
+        <h1><a href="<%= root_path %>"><span id="title">Grappple</span></a></h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
 
     <section class="top-bar-section">
       <!-- Right Nav Section -->
-       <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://grappple.herokuapp.com/assets/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snag It</a> 
+       <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://grappple.herokuapp.com/assets/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snap It</a> 
 
       <ul class="right">
         <li class="has-dropdown">
@@ -44,6 +44,12 @@
     <%= yield %>
     
   </body>
+  <br>
+  <% @colors.each do |color| %>
+    <%= link_to c_search_path(color: color) do %>
+      <div style="background-color: #<%= color %>;" class="box"></div>
+    <% end %>
+  <% end %>
 
 
 <ul class="photo-grid">
@@ -58,14 +64,6 @@
       </li>
     <% end %>
 </ul>
-
-
-<% @colors.each do |color| %>
-  
-  <%= link_to c_search_path(color: color) do %>
-    <div style="background-color: #<%= color %>;" class="box"></div>
-  <% end %>
-<% end %>
 
 
 <script>
