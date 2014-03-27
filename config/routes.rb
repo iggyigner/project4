@@ -4,6 +4,7 @@ Project4::Application.routes.draw do
   get 'photos' => 'photos#index', :as => :photos
   get 'photos/new' => 'photos#new', :as => :new_photo
   post 'photos' => 'photos#create'
+  post '/' => 'photos#create'
   get 'photos/:id' => 'photos#show', :as => :photo
   delete 'photos/:id' => 'photos#destroy'
   get 'photos/like/:id' => 'photos#like', :as => :like_photo
