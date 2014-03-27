@@ -3,12 +3,15 @@
 var init = function(){
   if (location.href.length >= 30 && location.href.substring(0,30) == "http://grappple.herokuapp.com/")
     {break;}
-  var images = document.getElementsByTagName('img', 'div');
-  if (images.length == 0)
-    {break;
-    alert("No images here");}
-  else
-    {setupSnagger(images);}
+  else {
+    var images = document.getElementsByTagName('img', 'div');
+    if (images.length == 0)
+      {break;
+      alert("No images here");}
+    else
+      {setupSnagger(images);}
+  }
+
 }
 
 var setupSnagger = function(images){
