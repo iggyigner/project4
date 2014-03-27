@@ -2,12 +2,13 @@
 
 var init = function(){
   if (location.href.length >= 30 && location.href.substring(0,30) == "http://grappple.herokuapp.com/")
-    break;
+    {break;}
   var images = document.getElementsByTagName('img', 'div');
   if (images.length == 0)
-    alert("No images here");
+    {break;
+    alert("No images here");}
   else
-    setupSnagger(images);
+    {setupSnagger(images);}
 }
 
 var setupSnagger = function(images){
