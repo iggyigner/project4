@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+
 
 gem 'httparty', '0.13.0' #requires .parse in controller, hash 'Party Hard message'
 
@@ -57,6 +59,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'kaleidoscope', github: 'joshsmith/kaleidoscope'
+end
+
+group :production do
   gem 'kaleidoscope', github: 'joshsmith/kaleidoscope'
 end
 

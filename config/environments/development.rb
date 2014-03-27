@@ -12,7 +12,7 @@ Project4::Application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
   
-
+  #Fake Paperclip into thinking image comes from localhost
   Paperclip.options[:command_path] = 'C:/Progra~1/ImageM~1.8-q'
 
 
