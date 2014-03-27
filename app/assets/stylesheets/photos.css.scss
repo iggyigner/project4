@@ -7,25 +7,26 @@
 }
 
 .photo-grid {
-    margin: 35px 0 0 0;
+    margin: 60px 0 0 0;
     padding: 0;
     list-style: none;
     position: relative;
     width: 100%;
 }
- 
+
 .photo-grid li {
-    margin-left: 40px;
-    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-bottom: 60px;
     padding: 6px;
     position: relative;
     float: left;
     overflow: hidden;
-    width: 16.6666667%; /* Fallback */
-    width: -webkit-calc(100% / 6);
-    width: calc(100% / 6);
+    width: 33.3333333%; /* Fallback */
+    width: -webkit-calc(100% / 3);
+    width: calc(100% / 3);
 
 }
+
  
 .photo-grid li a,
 .photo-grid li a img {
@@ -37,7 +38,7 @@
 .photo-grid li a img {
     /*max-width: 100%;*/
     width: 300px;
-    height: 100px;
+    height: 100%;
     z-index: -1;
 }
  
