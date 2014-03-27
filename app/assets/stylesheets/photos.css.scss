@@ -44,7 +44,7 @@
 }
  
 /* Flexbox is used for centering the heading */
-.add, .photo-grid li div a{
+/*.photo-grid li div a{
     position: absolute;
     left: 20px;
     top: 20px;
@@ -61,14 +61,14 @@
     align-items: center;
     text-align: center;
     opacity: 0;
-}
+}*/
 
  
-.photo-grid li a:hover div {
+/*.photo-grid li a:hover div {
     opacity: 1;
-}
+}*/
  
-.add, .photo-grid li a div h3 {
+.photo-grid li a div h3 {
     width: 100%;
     color: #fff;
     text-transform: uppercase;
