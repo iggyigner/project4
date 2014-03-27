@@ -1,7 +1,7 @@
-<h1>Likes page</h1>
-<h3>Hi, <%= @user.email %></h3><br>
 <%= link_to "My Adds", {controller: 'users', action: 'show'}%><br>
 <%= link_to "My Likes", {controller: 'users', action: 'show_likes'}%>
+
+<div><%= image_tag @user.liked_photos.first.image.url(:original), class: "most_recent_like" %></div>
 
 <ul class="photo-grid">
     <% @likes.each do |like| %>
