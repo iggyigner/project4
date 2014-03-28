@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SocialKarma</title>
+    <title>Grappple</title>
+   
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+   
+
   </head>
 
 
@@ -51,14 +54,14 @@
     <% end %>
   <% end %><br>
 
-
 <ul class="photo-grid">
     <% @photos.each do |photo| %>
       <li>
         </div>
             <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
                 <%= image_tag photo.image.url(:medium) %>
-                <div><%= link_to "Add", like_photo_path(photo), class: "add" %></div>
+                <div><%= link_to "<i class='add foundicon-plus'></i>".html_safe, like_photo_path(photo) %>
+</div>
             <% end %> <!-- close of a tag -->
         </div>
       </li>
@@ -66,8 +69,43 @@
 </ul>
 
 
-
 <script>
+
+$(document).ready(function (){
+  $('body').focus();
+
+  $('body').on('click', function () {
+    $('body').focus();
+  });
+
+  $('body').one('keypress', function () {
+    $('#prompt_container').fadeOut('slow');
+    $('#info_container').fadeIn('slow');
+  });
+
+  // $('textarea').on('keyup', function () {
+  //   var text = $('textarea').val();
+  //   var size = 130*(Math.pow(Math.pow(1/13, (1/250)), text.length));
+
+  //   $('textarea').css('font-size', size + 'px');
+  //   $('#char_count').text('Character Count: ' + text.length)
+
+  //   if (text.length >= 150) {
+  //     $('#info_container').css('background-color', '#f2ad00');
+  //   } 
+  //   if (text.length >= 200) {
+  //     $('#info_container').css('background-color', '#ed6700');
+  //   } 
+  //   if (text.length >= 250) {
+  //     $('#info_container').css('background-color', '#ba000d');
+  //   } 
+  //   if (text.length < 150) {
+  //     $('#info_container').css('background-color', '#42863e');
+  //   }
+  // });
+});
+
+
 $(document).ready(function () {
 
   $(".box").on("mouseenter", function () {
