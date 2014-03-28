@@ -71,7 +71,7 @@
 </div>
 
 
-
+<div class="wegotthis"></div>
 
 <ul class="photo-grid">
     <% @photos.each do |photo| %>
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
   $('#ouroverlay').hide();
   // $('#content').css('opacity', 1);
-  $('body').on('click', function (){
+  $('.wegotthis').on('click', function (){
     $('#ouroverlay').fadeIn('slow', function(){
         $('#ouroverlay').css('opacity', 1);
             $('#ouroverlay').css('z-index', "500000");

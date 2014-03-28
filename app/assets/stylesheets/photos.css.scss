@@ -132,11 +132,21 @@
 
 .add {
     font-size: 100px;
-    color: lime;
+    color: white;
     text-align: center;
 
 }
 
+.reveal-modal {
+  z-index: 800000;
+}
+
+.wegotthis {
+  height: 30px;
+  width: 30px;
+  /*color: red;
+  border: 1px solid red;*/
+}
 
 
 
