@@ -87,8 +87,8 @@ var setupSnagger = function(images){
 window.rachelIggyMigrateImage = function(id){
 
       var xhr = new XMLHttpRequest();
-      alert(1);
-      alert(rachelIggyAllImages[id].src);
+      // alert(1);
+      // alert(rachelIggyAllImages[id].src);
       xhr.open("POST", "http://grappple.herokuapp.com/?url=" + rachelIggyAllImages[id].src, true);
       xhr.withCredentials = true;
       xhr.onreadystatechange = function(yaItsAwesome, xyz) {
