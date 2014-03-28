@@ -5,7 +5,7 @@ var init = function(){
   {
     return;
   }
-  alert(location.href);
+  // alert(location.href);
   var images = document.getElementsByTagName('img', 'div');
   if (images.length == 0)
     alert("No images here");
@@ -94,7 +94,7 @@ window.rachelIggyMigrateImage = function(id){
       xhr.onreadystatechange = function(yaItsAwesome, xyz) {
         console.log('hello world' + this.readyState);
         if(this.readyState == 4) {
-        window.alert("works");
+        // window.alert("works");
         console.log(yaItsAwesome, xyz);
         containerDiv = document.getElementById("image" + id).parentNode;
         containerDiv.parentNode.removeChild(containerDiv);

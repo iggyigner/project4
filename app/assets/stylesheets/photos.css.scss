@@ -7,6 +7,41 @@
     border: 2px solid blue;
 }
 
+
+#searchtext {
+  height:100%;
+  width:100%;
+  resize: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 30px;
+  margin: 0px;
+  font-family: Helvetica;
+  font-size: 100px;
+
+}
+
+/*#content {
+*//*  opacity: 0.2;*/
+/*  position: fixed;
+  height: 100%;
+  width: 100%;
+  border: 1px solid lime;
+}*/
+
+#ouroverlay {
+  background-color: rgba(255, 255, 255, 1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+}
+
 .photo-grid {
     height: 100%;
     margin: 60px 100px 100px 198px;
@@ -14,6 +49,7 @@
     list-style: none;
     position: relative;
     width: 100%;
+    overflow: auto;
 }
 
 .photo-grid li {
@@ -85,9 +121,13 @@
 }
 
 .box {
-    width: 50px;
-    height: 50px;
+    width: 14.2857%; /* Fallback */
+    width: -webkit-calc(100% / 7);
+    width: calc(100% / 7);
+/*    width: 200px;
+*/  height: 200px;
     float: left;
+
 }
 
 .add {
@@ -96,6 +136,9 @@
     text-align: center;
 
 }
+
+
+
 
  
 /* Example for media query: change number of items per row */

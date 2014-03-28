@@ -12,12 +12,23 @@
 
 
 <body>
+  <div id="ouroverlay">
+     <br>
+  <% @colors.each do |color| %>
+    <%= link_to c_search_path(color: color) do %>
+      <div style="background-color: #<%= color %>;" class="box"></div>
+    <% end %>
+  <% end %><br> 
+        <textarea id="searchtext" input type="text" name="searchword"></textarea>
+  </div>
+<!--       <div id="content">THIS IS MY CONTENT
+ -->
+
     <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
         <h1><a href="<%= root_path %>"><span id="title">Grappple</span></a></h1>
       </li>
-      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
 
     <section class="top-bar-section">
@@ -47,12 +58,7 @@
     <%= yield %>
     
   </body>
-  <br>
-  <% @colors.each do |color| %>
-    <%= link_to c_search_path(color: color) do %>
-      <div style="background-color: #<%= color %>;" class="box"></div>
-    <% end %>
-  <% end %><br> 
+ 
 
 <div id="loginModal" class="reveal-modal" data-reveal>
   <%= render :partial =>'loginform', :controller => 'auths', :action => 'new' %>
@@ -79,45 +85,12 @@
       </li>
     <% end %>
 </ul>
+<!-- </div>
+ -->
+
 
 
 <script>
-
-$(document).ready(function (){
-  $('body').focus();
-
-  $('body').on('click', function () {
-    $('body').focus();
-  });
-
-  $('body').one('keypress', function () {
-    $('#prompt_container').fadeOut('slow');
-    $('#info_container').fadeIn('slow');
-  });
-
-  // $('textarea').on('keyup', function () {
-  //   var text = $('textarea').val();
-  //   var size = 130*(Math.pow(Math.pow(1/13, (1/250)), text.length));
-
-  //   $('textarea').css('font-size', size + 'px');
-  //   $('#char_count').text('Character Count: ' + text.length)
-
-  //   if (text.length >= 150) {
-  //     $('#info_container').css('background-color', '#f2ad00');
-  //   } 
-  //   if (text.length >= 200) {
-  //     $('#info_container').css('background-color', '#ed6700');
-  //   } 
-  //   if (text.length >= 250) {
-  //     $('#info_container').css('background-color', '#ba000d');
-  //   } 
-  //   if (text.length < 150) {
-  //     $('#info_container').css('background-color', '#42863e');
-  //   }
-  // });
-});
-
-
 $(document).ready(function () {
 
   $(".box").on("mouseenter", function () {
@@ -129,5 +102,23 @@ $(document).ready(function () {
     $(this).css('box-shadow', "none");
     $(this).css('z-index', "1");
   });
+    $('textarea').focus();
+
+  $('#ouroverlay').hide();
+  // $('#content').css('opacity', 1);
+  $('body').on('click', function (){
+    $('#ouroverlay').fadeIn('slow', function(){
+        $('#ouroverlay').css('opacity', 1);
+            $('#ouroverlay').css('z-index', "500000");
+
+        $('textarea').focus();
+    });
+  });
+
+  $('body').on('keypress', function(){
+    $('#ouroverlay').fadeOut('slow');
+    $('body').css('opacity', 1);
+  });
+
 });
 </script>
