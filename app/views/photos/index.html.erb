@@ -35,8 +35,8 @@
         </li>
         <% else %>
           <ul class="right">
-            <li><%= link_to "Log In", {:controller => 'auths', :action => 'new'} %></li>
-            <li><%= link_to "Sign Up", {:controller => 'users', :action => 'new'} %></li>
+            <li data-reveal-id="loginModal"><%= link_to "Log In", {:controller => 'auths', :action => 'new'} %></li>
+            <li data-reveal-id="signupModal"><%= link_to "Sign Up", {:controller => 'users', :action => 'new'} %></li>
           </ul>
         <% end %>
         </ul>
@@ -52,7 +52,20 @@
     <%= link_to c_search_path(color: color) do %>
       <div style="background-color: #<%= color %>;" class="box"></div>
     <% end %>
-  <% end %><br>
+  <% end %><br> 
+
+<div id="loginModal" class="reveal-modal" data-reveal>
+  <%= render :partial =>'loginform', :controller => 'auths', :action => 'new' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="signupModal" class="reveal-modal" data-reveal>
+  <%= render :partial =>'signupform', :controller => 'users', :action => 'new' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+
 
 <ul class="photo-grid">
     <% @photos.each do |photo| %>
@@ -60,8 +73,7 @@
         </div>
             <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
                 <%= image_tag photo.image.url(:medium) %>
-                <div><%= link_to "<i class='add foundicon-plus'></i>".html_safe, like_photo_path(photo) %>
-</div>
+                <div><%= link_to "<i class='add foundicon-plus'></i>".html_safe, like_photo_path(photo) %></div>
             <% end %> <!-- close of a tag -->
         </div>
       </li>

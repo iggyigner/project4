@@ -26,6 +26,7 @@
     width: 33.3333333%; /* Fallback */
     width: -webkit-calc(100% / 3);
     width: calc(100% / 3);
+    height: 274px;
 
 }
 
@@ -94,12 +95,7 @@
     color: lime;
     text-align: center;
 
-  
-
 }
-
-
-
 
  
 /* Example for media query: change number of items per row */
@@ -127,4 +123,3 @@
 
     }
 }
- 

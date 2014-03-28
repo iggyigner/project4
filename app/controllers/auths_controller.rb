@@ -4,6 +4,7 @@ class AuthsController < ApplicationController
 			redirect_to :root
 		else
 			@user = User.new
+			redirect_to :root
 		end
 	end
 

@@ -29,6 +29,7 @@ class PhotosController < ApplicationController
     "77cc33", "669900", "336600", "666600", "999900", "cccc33",
     "ffff00", "ffcc33", "ff9900", "ff6600", "cc6633", "996633",
     "663300", "000000", "999999", "cccccc", "ffffff"]
+    @user = User.new
   end
 
   def new
