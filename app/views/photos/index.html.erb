@@ -83,7 +83,7 @@
         <div>
           <% @photos.each do |photo| %>
             <div class="gif-box large-2 medium-3 small-4 columns"
-                  style="background-image: url('<%= image_tag photo.image.url(:medium) %>');"
+                  style="background-image: url(<%= photo.image.url(:medium) %&gt;);"
                   >
             </div>
           <% end %>
