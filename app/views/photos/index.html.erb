@@ -74,16 +74,25 @@
 <div class="wegotthis">Color Search</div>
 
 
+<style media="screen">
+  .image_div { background-image: url(<%= @object.image %>); }
+</style>
+
+
+
+
   <!-- PHOTO GRID CONTAINER -->
   <div class="main row">
     <div class="large-12 column no-pad"> 
       <div class="giftwrapper small-12 column no-pad"> 
         <div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
+          <% @photos.each do |photo| %>
+            <div class="gif-box large-2 medium-3 small-4 columns"
+                  style="background-image: url(<%= image_tag photo.image.url(:medium) %>);"
+                  >
+            </div>
+          <% end %>
+<!--           <div class="gif-box large-2 medium-3 small-4 columns"
                 style="background-image: url('/assets/ca_dog_home.jpg')"
                 >
           </div>
@@ -126,7 +135,7 @@
           <div class="gif-box large-2 medium-3 small-4 columns"
                 style="background-image: url('/assets/ca_dog_home.jpg')"
                 >
-          </div>                                                            
+          </div>  -->                                                           
         </div>  
       </div>
     </div>
