@@ -141,18 +141,7 @@
     </div>
   </div>
 
-<ul class="photo-grid">
-    <% @photos.each do |photo| %>
-      <li>
-        </div>
-            <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
-                <%= image_tag photo.image.url(:medium) %>
-                <div><%= link_to "<i class='add foundicon-plus'></i>".html_safe, like_photo_path(photo) %></div>
-            <% end %> <!-- close of a tag -->
-        </div>
-      </li>
-    <% end %>
-</ul>
+
 <!-- </div>
  -->
 
