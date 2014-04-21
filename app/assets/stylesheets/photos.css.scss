@@ -155,7 +155,17 @@
   transition: 1s;
 }
 
+.row {
+  margin: 0;
+}
 
+.gif-box {
+  height: 200px;
+  margin-bottom: -5px;
+  background-size: cover;
+  display: inline-block;
+  transition: 0.5s;
+}
 
  
 /* Example for media query: change number of items per row */
@@ -166,6 +176,21 @@
         width: -webkit-calc(100% / 2);
         width: calc(100% / 2);
     }
+}
+
+@media screen and (max-width: 640px) {
+  .gif-box {
+    display: none;
+  }
+  .giftwrapper {
+    margin-top: 2%;
+    background-image: url('/assets/ca_cop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 2px;
+  }
 }
 
 /*@media screen and (device-aspect-ratio: 40/71) {*/
