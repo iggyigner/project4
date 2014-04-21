@@ -153,10 +153,10 @@
 .main {
   opacity: 1;
   transition: 1s;
+  max-width: 100.0rem;
 }
 
 .row {
-  margin: 0;
 }
 
 .gif-box {
@@ -165,6 +165,11 @@
   background-size: cover;
   display: inline-block;
   transition: 0.5s;
+}
+
+.no-pad {
+  padding-left: 0;
+  padding-right: 0;
 }
 
  
