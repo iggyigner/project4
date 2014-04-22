@@ -110,7 +110,11 @@
             <div class="gif-box large-2 medium-3 small-4 columns no-pad"
                   style="background-image: url(<%= photo.image.url(:medium) %>)"
                   >
-            <span class="roll" ></span>
+            <span class="roll" >
+              <div class="like-container">
+                <%= image_tag "like.png" %>
+              </div>
+            </span>
             </div>
           <% end %>
 <!--           <div class="gif-box large-2 medium-3 small-4 columns"
