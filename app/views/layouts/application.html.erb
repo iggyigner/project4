@@ -22,11 +22,7 @@
       </li>
     </ul>
 
-
-
-
-
-    <section class="top-bar-section">
+      <section class="top-bar-section">
       <!-- Right Nav Section -->
        <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://grappple.herokuapp.com/javascripts/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snap It</a> 
 
@@ -50,7 +46,38 @@
         <% end %>
       </section>
     </nav>
+
+
+
     <%= yield %>
+    
+
+
+    <!-- COLOR SEARCH PALETTE -->
+    <div id="color-palette" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <div class="overlay">
+          <% @colors.each do |color| %>
+            <%= link_to c_search_path(color: color) do %>
+              <div style="background-color: #<%= color %>;" class="box"></div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- LOGIN AND SIGNUP MODALS -->
+    <div id="loginModal" class="reveal-modal" data-reveal>
+      <%= render :partial =>'loginform', :controller => 'auths', :action => 'new' %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="signupModal" class="reveal-modal" data-reveal>
+      <%= render :partial =>'signupform', :controller => 'users', :action => 'new' %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
