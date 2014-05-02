@@ -16,7 +16,11 @@
     <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="<%= root_path %>"><span id="title">Grappple</span></a></h1>
+        <h1>
+          <%= link_to root_path do %>
+            <%= content_tag(:span, "Grappple", :id => "title" %>
+          <% end %>
+        </h1>
       </li>
     </ul>
 
