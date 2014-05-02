@@ -1,3 +1,4 @@
+<!-- NAVBAR -->
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
@@ -9,29 +10,28 @@
 
   <section class="top-bar-section">
   <!-- Right Nav Section -->
-   <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://grappple.herokuapp.com/javascripts/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snap It</a> 
-
+  	<a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://grappple.herokuapp.com/javascripts/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snap It</a>  
     <ul class="right">
-    <% if current_user %>
-      <li><%= link_to "Back", photos_path %></li>
-      <li class="has-dropdown">
-        <a href="<%= photos_path %>", class="dashboard">Hello, <%= current_user.email == nil ? current_user.email : current_user.email%></a>
-        <ul class="dropdown">
-          <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>
-          <li> <%= link_to "My Profile", user_path(current_user) %> </li>   
-        </ul>
-      </li>
-  </ul>
-    <% else %>
-      <ul class="right">
-        <li><%= link_to "Back", photos_path %></li>
-      </ul>
-    <% end %>
+    	<% if current_user %>
+	      <li><%= link_to "Back", photos_path %></li>
+	      <li class="has-dropdown">
+	        <a href="<%= photos_path %>", class="dashboard">Hello, <%= current_user.email == nil ? current_user.email : current_user.email%></a>
+	        <ul class="dropdown">
+	          <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>
+	          <li> <%= link_to "My Profile", user_path(current_user) %> </li>   
+	        </ul>
+	      </li>
+	  </ul>
+    	<% else %>
+	      <ul class="right">
+	        <li><%= link_to "Back", photos_path %></li>
+	      </ul>
+    	<% end %>
   </section>
 </nav>
 
+<!-- PHOTO SUMMARY -->
 <div class="show">
-
 	<h1>Photo Summary</h1>
 		<div>
 			<%= image_tag @photo.image.url(:medium) %>

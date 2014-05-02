@@ -1,3 +1,4 @@
+// HOME PAGE HOVER ACTION
 $(function() {
   // OPACITY OF BUTTON SET TO 0%
   $(".roll").css("opacity",".2");

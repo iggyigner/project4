@@ -2,11 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.outline {
+/* SECONDARY PHOTO GRID */
+/*.outline {
     border: 2px solid blue;
 }
-
 
 #searchtext {
   height:100%;
@@ -19,27 +18,7 @@
   margin: 0px;
   font-family: Helvetica;
   font-size: 100px;
-
 }
-
-/*#content {
-*//*  opacity: 0.2;*/
-/*  position: fixed;
-  height: 100%;
-  width: 100%;
-  border: 1px solid lime;
-}*/
-
-/*#ouroverlay {
-  background-color: rgba(255, 255, 255, 1);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}*/
 
 .photo-grid {
     height: 100%;
@@ -58,14 +37,12 @@
     position: relative;
     float: left;
     overflow: hidden;
-    width: 33.3333333%; /* Fallback */
-    width: -webkit-calc(100% / 3);
+    width: 33.3333333%;*/ /* Fallback */
+    /*width: -webkit-calc(100% / 3);
     width: calc(100% / 3);
     height: 274px;
-
 }
 
- 
 .photo-grid li a,
 .photo-grid li a img {
     display: block;
@@ -74,14 +51,12 @@
 }
  
 .photo-grid li a img {
-    /*max-width: 100%;*/
     width: 100%;
-    /*height: 100%;*/
     z-index: -1;
-}
+}*/
  
 /* Flexbox is used for centering the heading */
- .photo-grid li div {
+ /*.photo-grid li div {
     position: absolute;
     left: 20px;
     top: 20px;
@@ -98,9 +73,7 @@
     align-items: center;
     text-align: center;
     opacity: 0;
-
 }
-
  
 .add, .photo-grid li div:hover {
     opacity: 1;
@@ -119,39 +92,17 @@
     width: 100%;
 }
 
-.box {
-    width: 14.2857%; /* Fallback */
-    width: -webkit-calc(100% / 7);
-    width: calc(100% / 7);
-/*    width: 200px;
-*/  height: 50px;
-    float: left;
-
-}
-
 .add {
     font-size: 100px;
     color: white;
     text-align: center;
-
 }
-
-.reveal-modal {
-  z-index: 800000;
-}
-
-/*.wegotthis {
-  height: 30px;
-  width: 30px;
-  color: red;
-  border: 1px solid red;
-}*/
 
 div.back-link {
   position: relative;
   bottom: 55px;
   text-align: center;
-}
+}*/
 
 
 /*NEW PHOTO GRID*/
@@ -161,24 +112,24 @@ div.back-link {
   max-width: 100.0rem;
 }
 
-.row {
+.box {
+    width: 14.2857%; /* Fallback */
+    width: -webkit-calc(100% / 7);
+    width: calc(100% / 7);
+    height: 50px;
+    float: left;
+}
+
+.reveal-modal {
+  z-index: 800000;
 }
 
 .gif-box {
   height: 200px;
- /* margin-bottom: -5px;*/
   background-size: cover;
   display: inline-block;
   transition: 0.5s;
 }
-
-/*.gif-box:hover {
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-}*/
 
 .no-pad {
   padding-left: 0;
@@ -197,12 +148,7 @@ span.roll {
 }
 
 
-
-
-
-
 /* MODAL LINKS */
-
 #showme {
   height: 100px;
   width: 100px;
@@ -275,54 +221,8 @@ span.roll {
   font-weight: 800;
 }
 
-#linkedin {
-  color: rgba(253,222,77,1);
-}
-
-#git {
-  color: rgba(238,57,62,1);
-}
-
-#twitter {
-  color: rgba(247,247,247,1);
-}
-
-#portfolio {
-  color: rgba(90,199,185,1);
-}
-
-#bio {
-  color: rgba(249,144,211,1);
-}
-
-#angellist {
-  color: rgba(196,177,156,1);
-}
-
-.modalBios {
-  color: rgba(247,247,247,1);
-  font-family: "brandon-grotesque";
-  font-size: 1.6em;
-  letter-spacing: 1.25px;
-  line-height: 1.5;
-}
-
-.stulink {
-  display: block;
-}
-
-.hidelink {
-  display: none;
-}
-
-
-
-
-
-
  
-/* Example for media query: change number of items per row */
- 
+/* MEDIA QUERIES */
 @media screen and (max-width: 945px) {
     .photo-grid li {
         width: 50%; /* Fallback */
@@ -346,7 +246,6 @@ span.roll {
   }
 }
 
-/*@media screen and (device-aspect-ratio: 40/71) {*/
 @media screen and (max-width: 480px) {
     .photo-grid li {
         margin-left: 10px;
@@ -358,6 +257,5 @@ span.roll {
         width: 33.3333333%; /* Fallback */
         width: -webkit-calc(100% / 3);
         width: calc(100% / 3);
-
     }
 }
