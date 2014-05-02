@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.pageslide
 //= require foundation
+//= require main
 //= require turbolinks
 //= require_tree .
 
