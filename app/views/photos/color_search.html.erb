@@ -7,7 +7,7 @@
                 <%= image_tag photo.image.url(:medium) %>
                 <div>
                     <% if !current_user %>
-                        <%= link_to "Like", {:controller => 'auths', :action => 'new'}, data-reveal-id: "loginModal" %>
+                        <%= link_to "Like", {:controller => 'auths', :action => 'new'}, :data => {:reveal_id => 'loginModal'} %>
                     <% else %>
                         <%= link_to "Like", like_photo_path(photo), class: "add" %>
                     <% end %>
