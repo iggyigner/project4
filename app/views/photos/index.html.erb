@@ -11,9 +11,7 @@
 
 <body>
   
-
-  
-  <div id="showme"><%= link_to "ColorMePretty", "#color-palette" %></div>
+  <!-- COLOR SEARCH PALETTE -->
   <div id="color-palette" class="modalDialog">
     <div>
       <a href="#close" title="Close" class="close">X</a>
@@ -26,44 +24,6 @@
       </div>
     </div>
   </div>
-
-
-    <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="<%= root_path %>"><span id="title">Grappple</span></a></h1>
-      </li>
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-       <a onclick="alert('To install the Snag It button, drag it to your bookmarks toolbar!');return false;" href="javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://grappple.herokuapp.com/javascripts/snagger.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));" class="button">Snap It</a> 
-
-      <ul class="right">
-          <% if current_user %>
-          <li><%= link_to "Color Search", "#color-palette" %></li>
-          <li class="has-dropdown">
-            <a href="<%= photos_path %>", class="dashboard">Hello, <%= current_user.email == nil ? current_user.email : current_user.email%></a>
-            <ul class="dropdown">
-              <li> <%= link_to "Log Out", {:controller => 'auths', :action => 'destroy'}, {:method => :delete}  %> </li>
-              <li> <%= link_to "My Profile", user_path(current_user) %> </li>   
-            </ul>
-          </li>
-      </ul>
-        <% else %>
-          <ul class="right">
-            <li><%= link_to "Color Search", "#color-palette" %></li>
-            <li data-reveal-id="loginModal"><%= link_to "Log In", {:controller => 'auths', :action => 'new'} %></li>
-            <li data-reveal-id="signupModal"><%= link_to "Sign Up", {:controller => 'users', :action => 'new'} %></li>
-          </ul>
-        <% end %>
-      </section>
-    </nav>
-    
-    <%= javascript_include_tag "application" %>
-    <%= yield %>
-    
-  </body>
  
 
 <div id="loginModal" class="reveal-modal" data-reveal>
@@ -96,3 +56,4 @@
     </div>
   </div>
 
+</body>
