@@ -12,18 +12,17 @@
 <body>
   
 
-  <!-- <a href="#color-palette" class="glyphicon glyphicon-chevron-up">COLOR ME PRETTY</a> -->
+  
   <div id="showme"><%= link_to "ColorMePretty", "#color-palette" %></div>
   <div id="color-palette" class="modalDialog">
     <div>
       <a href="#close" title="Close" class="close">X</a>
       <div class="overlay">
-        <a ng-class="{hidelink: student.linkedin==''}" id="linkedin" href="https://www.linkedin.com/{{student.linkedin}}"  target="{{_blank}}">LINKEDIN<br></a>
-        <a ng-class="{hidelink: student.github==''}" id="git" href="http://www.github.com/{{student.github}}" target="_blank">GITHUB<br></a>
-        <a ng-class="{hidelink: student.twitter==''}" id="twitter" href="http://www.twitter.com/{{student.twitter}}" target="_blank">TWITTER<br></a>
-        <a ng-class="{hidelink: student.portfolio==''}" id="portfolio" href="http://{{student.portfolio}}" target="_blank">PORTFOLIO<br></a>
-        <a ng-class="{hidelink: student.angellist==''}" id="angellist" href="https://angel.co/{{student.angellist}}" target="_blank">ANGEL LIST<br></a>
-        <a href="#{{student.last}}" ng-class="{hidelink: student.bio==''}" id="bio" href="#">BIO<br></a> 
+        <% @colors.each do |color| %>
+          <%= link_to c_search_path(color: color) do %>
+            <div style="background-color: #<%= color %>;" class="box"></div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
