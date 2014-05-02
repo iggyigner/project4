@@ -3,25 +3,14 @@
       <li>
         </div>
             <%#= photo.filename %>
-            <%= link_to photo_path(photo) do %>
+            <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
                 <%= image_tag photo.image.url(:medium) %>
-                <div>
-                    <%# if !current_user %>
-                        <%#= link_to "Like", {:controller => 'auths', :action => 'new'}, :data => {:reveal_id => 'loginModal'} %>
-                    <%# else %>
-                        <%#= link_to "Like", like_photo_path(photo), class: "add" %>
-                    <%# end %>
-                </div>
-            <% end %>
+                <div><%= link_to "Add", like_photo_path(photo), class: "add" %></div>
+            <% end %> <!-- close of a tag -->
         </div>
       </li>
     <% end %>
 </ul>
-
-<div id="loginModal" class="reveal-modal" data-reveal>
-  <%= render :partial =>'loginform', :controller => 'auths', :action => 'new' %>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
 
 <div class="back-link">
     <%= link_to "Back", photos_path %>
