@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* SECONDARY PHOTO GRID */
-/*.outline {
+.outline {
     border: 2px solid blue;
 }
 
@@ -37,8 +37,8 @@
     position: relative;
     float: left;
     overflow: hidden;
-    width: 33.3333333%;*/ /* Fallback */
-    /*width: -webkit-calc(100% / 3);
+    width: 33.3333333%; /* Fallback */
+    width: -webkit-calc(100% / 3);
     width: calc(100% / 3);
     height: 274px;
 }
@@ -53,10 +53,10 @@
 .photo-grid li a img {
     width: 100%;
     z-index: -1;
-}*/
+}
  
 /* Flexbox is used for centering the heading */
- /*.photo-grid li div {
+ .photo-grid li div {
     position: absolute;
     left: 20px;
     top: 20px;
@@ -102,10 +102,10 @@ div.back-link {
   position: relative;
   bottom: 55px;
   text-align: center;
-}*/
+}
 
 
-/*NEW PHOTO GRID*/
+/*HOME PHOTO GRID*/
 .main {
   opacity: 1;
   transition: 1s;
