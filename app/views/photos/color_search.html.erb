@@ -1,3 +1,7 @@
+<div class="back-link">
+    <%= link_to "Back", photos_path %>
+</div>
+
 <ul class="photo-grid">
     <% @photos.each do |photo| %>
       <li>
@@ -10,7 +14,3 @@
       </li>
     <% end %>
 </ul>
-
-<div class="back-link">
-    <%= link_to "Back", photos_path %>
-</div>
