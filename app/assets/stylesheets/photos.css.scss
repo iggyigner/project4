@@ -197,6 +197,123 @@ span.roll {
   box-shadow: 0px 0px 4px  #000; 
 }
 
+
+
+
+
+
+/* MODAL LINKS */
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 450px;
+  position: relative;
+  margin: 18% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0);
+  text-align: center;
+}
+
+.close {
+  background: #FFFFFF;
+  color: #606061;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { 
+  background: rgba(90,199,185,1); 
+}
+
+.overlay {
+  font-size: 1.2em;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+  font-family: "brandon-grotesque";
+  font-size: 1em;
+  font-weight: 800;
+}
+
+#linkedin {
+  color: rgba(253,222,77,1);
+}
+
+#git {
+  color: rgba(238,57,62,1);
+}
+
+#twitter {
+  color: rgba(247,247,247,1);
+}
+
+#portfolio {
+  color: rgba(90,199,185,1);
+}
+
+#bio {
+  color: rgba(249,144,211,1);
+}
+
+#angellist {
+  color: rgba(196,177,156,1);
+}
+
+.modalBios {
+  color: rgba(247,247,247,1);
+  font-family: "brandon-grotesque";
+  font-size: 1.6em;
+  letter-spacing: 1.25px;
+  line-height: 1.5;
+}
+
+.stulink {
+  display: block;
+}
+
+.hidelink {
+  display: none;
+}
+
+
+
+
+
+
  
 /* Example for media query: change number of items per row */
  

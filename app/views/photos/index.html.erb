@@ -18,8 +18,22 @@
   <% end %><br> 
         <textarea id="searchtext" input type="text" name="searchword"></textarea>
   </div>
-<!--       <div id="content">THIS IS MY CONTENT
- -->
+
+  <a href="#color-palette" class="glyphicon glyphicon-chevron-up">COLOR ME PRETTY</a>
+  <div id="color-palette" class="modalDialog">
+    <div>
+      <a href="#close" title="Close" class="close">X</a>
+      <div class="overlay">
+        <a ng-class="{hidelink: student.linkedin==''}" id="linkedin" href="https://www.linkedin.com/{{student.linkedin}}"  target="{{_blank}}">LINKEDIN<br></a>
+        <a ng-class="{hidelink: student.github==''}" id="git" href="http://www.github.com/{{student.github}}" target="_blank">GITHUB<br></a>
+        <a ng-class="{hidelink: student.twitter==''}" id="twitter" href="http://www.twitter.com/{{student.twitter}}" target="_blank">TWITTER<br></a>
+        <a ng-class="{hidelink: student.portfolio==''}" id="portfolio" href="http://{{student.portfolio}}" target="_blank">PORTFOLIO<br></a>
+        <a ng-class="{hidelink: student.angellist==''}" id="angellist" href="https://angel.co/{{student.angellist}}" target="_blank">ANGEL LIST<br></a>
+        <a href="#{{student.last}}" ng-class="{hidelink: student.bio==''}" id="bio" href="#">BIO<br></a> 
+      </div>
+    </div>
+  </div>
+
 
     <nav class="top-bar" data-topbar>
     <ul class="title-area">
@@ -82,91 +96,9 @@
                   >
             <span class="roll" ></span>
             </div>
-          <% end %>
-<!--           <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div> 
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>
-          <div class="gif-box large-2 medium-3 small-4 columns"
-                style="background-image: url('/assets/ca_dog_home.jpg')"
-                >
-          </div>  -->                                                           
+          <% end %>                                                         
         </div>  
       </div>
     </div>
   </div>
 
-
-<!-- </div>
- -->
-
-
-
-<script>
-$(document).ready(function () {
-
-  $(".box").on("mouseenter", function () {
-    $(this).css('box-shadow', "0 0 25px white");
-    $(this).css('z-index', "100000");
-  });
-
-  $(".box").on("mouseleave", function () {
-    $(this).css('box-shadow', "none");
-    $(this).css('z-index', "1");
-  });
-    $('textarea').focus();
-
-  $('#ouroverlay').hide();
-  // $('#content').css('opacity', 1);
-  $('.wegotthis').on('click', function (){
-    $('#ouroverlay').fadeIn('slow', function(){
-        $('#ouroverlay').css('opacity', 1);
-            $('#ouroverlay').css('z-index', "500000");
-
-        $('textarea').focus();
-    });
-  });
-
-  $('body').on('keypress', function(){
-    $('#ouroverlay').fadeOut('slow');
-    $('body').css('opacity', 1);
-  });
-
-});
-</script>
