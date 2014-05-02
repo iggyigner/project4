@@ -2,11 +2,10 @@
     <% @photos.each do |photo| %>
       <li>
         </div>
-            <%#= photo.filename %>
-            <%= link_to photo_path(photo) do %> <!-- opening for you a tag -->
+            <%= link_to photo_path(photo) do %>
                 <%= image_tag photo.image.url(:medium) %>
-                <!-- <div><%#= link_to "Add", like_photo_path(photo), class: "add" %></div> -->
-            <% end %> <!-- close of a tag -->
+            <% end %>
+            <span class="roll" ></span>
         </div>
       </li>
     <% end %>
