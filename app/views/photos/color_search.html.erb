@@ -18,6 +18,11 @@
     <% end %>
 </ul>
 
+<div id="loginModal" class="reveal-modal" data-reveal>
+  <%= render :partial =>'loginform', :controller => 'auths', :action => 'new' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
 <div class="back-link">
     <%= link_to "Back", photos_path %>
 </div>
