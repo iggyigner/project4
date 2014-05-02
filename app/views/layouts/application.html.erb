@@ -48,7 +48,32 @@
     </nav>
 
 
-    
+      <!-- COLOR SEARCH PALETTE -->
+  <div id="color-palette" class="modalDialog">
+    <div>
+      <a href="#close" title="Close" class="close">X</a>
+      <div class="overlay">
+        <% @colors.each do |color| %>
+          <%= link_to c_search_path(color: color) do %>
+            <div style="background-color: #<%= color %>;" class="box"></div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+ 
+
+<div id="loginModal" class="reveal-modal" data-reveal>
+  <%= render :partial =>'loginform', :controller => 'auths', :action => 'new' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="signupModal" class="reveal-modal" data-reveal>
+  <%= render :partial =>'signupform', :controller => 'users', :action => 'new' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
